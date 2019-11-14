@@ -11,17 +11,24 @@
 (define b (+ a 1))
 (define expr6 (+ a b (* a b)))
 (define expr7 (= a b))
-(define expr8 (if (and (> b a) (< b (* a b)))
-                  b
-                  a))
-(define expr9 (cond ((= a 4) 6)
-                    ((= b 4) (+ 6 7 a))
-                    (else 25)))
+
+(define expr8
+  (if (and (> b a) (< b (* a b)))
+      b
+      a))
+
+(define expr9
+  (cond ((= a 4) 6)
+        ((= b 4) (+ 6 7 a))
+        (else 25)))
+
 (define expr10 (+ 2 (if (> b a) b a)))
-(define expr11 (* (cond ((> a b) a)
-                        ((< a b) b)
-                        (else -1))
-                  (+ a 1)))
+
+(define expr11
+  (* (cond ((> a b) a)
+           ((< a b) b)
+           (else -1))
+     (+ a 1)))
 
 (check-equal? expr1 10)
 (check-equal? expr2 12)
