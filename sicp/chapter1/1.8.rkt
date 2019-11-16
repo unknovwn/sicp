@@ -8,8 +8,8 @@
 (define (square x)
   (* x x))
 
-(define (average x y)
-  (/ (+ x y) 2))
+(define (average3 x y z)
+  (/ (+ x y z) 3))
 
 (define (cbrt-iter guess oldguess x)
   (if (good-enough? guess oldguess)
@@ -23,9 +23,9 @@
       (* guess 0.001)))
 
 (define (improve guess x)
-  (/ (+ (/ x (square guess))
-        (* 2 guess))
-     3))
+  (average3 (/ x (square guess))
+            guess
+            guess))
 
 (define (cbrt x)
   (cbrt-iter 1.0 2.0 x))
