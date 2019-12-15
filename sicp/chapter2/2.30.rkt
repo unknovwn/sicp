@@ -26,4 +26,3 @@
               (list 1
                     (list 4 (list 9 16) 25)
                     (list 36 49)))
-              
